@@ -8,19 +8,18 @@ const runGame = (gameDescription, generateGameData) => {
   console.log(`Hello ${userName}!\n`);
 
   const roundsCount = 3;
-  
-  for (let i = 0; i < roundsCount; i++) {
+  for (let i = 0; i < roundsCount; i += 1) {
     const gameData = generateGameData();
 
     console.log(`Question: ${gameData.question}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
-    if (userAnswer !== gameData.rightAnswer) {
+    if (userAnswer === gameData.rightAnswer) {
+      console.log('Correct!');
+    } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${gameData.rightAnswer}'.`);
       console.log(`Let's try again, ${userName}!`);
       return;
-    } else {
-      console.log('Correct!');
     }
   }
   console.log(`Congratulations, ${userName}!`);

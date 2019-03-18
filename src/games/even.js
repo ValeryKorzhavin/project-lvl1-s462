@@ -1,12 +1,13 @@
 import runGame from '..';
 
-const isEven = number => number % 2 === 0 ? true : false; 
+const isEven = number => number % 2 === 0;
 
 const generateGameData = () => {
   const maxRandomNumber = 100;
   const randomNumber = Math.floor(Math.random() * maxRandomNumber);
   const rightAnswer = isEven(randomNumber) ? 'yes' : 'no';
   const question = randomNumber;
+
   return { question, rightAnswer };
 };
 
