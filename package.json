@@ -2,7 +2,6 @@
   "name": "korzhavin-games",
   "version": "1.1.0",
   "description": "A set of console math games",
-  "main": "index.js",
   "scripts": {
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "prepublishOnly": "npm run build"
