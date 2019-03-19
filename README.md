@@ -25,3 +25,9 @@ brain-even
 
 #### Brain gcd
 [![asciicast](https://asciinema.org/a/ckCi4Xh46vJ5cWhR4acJhGp9j.svg)](https://asciinema.org/a/ckCi4Xh46vJ5cWhR4acJhGp9j)
+
+#### Brain progression
+[![asciicast](https://asciinema.org/a/WhFOO8anaQ1aIydYvBmn4ornj.svg)](https://asciinema.org/a/WhFOO8anaQ1aIydYvBmn4ornj)
+
+#### Brain prime
+[![asciicast](https://asciinema.org/a/b9U2GxZDU2jdsnTx2eWU8DlEr.svg)](https://asciinema.org/a/b9U2GxZDU2jdsnTx2eWU8DlEr)
