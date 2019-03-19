@@ -9,14 +9,14 @@ const runGame = (gameDescription, generateGameData) => {
 
   const roundsCount = 3;
   for (let i = 0; i < roundsCount; i += 1) {
-    const gameData = generateGameData();
-    console.log(`Question: ${gameData.question}`);
+    const { question, rightAnswer } = generateGameData();
+    console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
-    if (userAnswer === gameData.rightAnswer) {
+    if (userAnswer === rightAnswer) {
       console.log('Correct!');
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${gameData.rightAnswer}'.`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
       console.log(`Let's try again, ${userName}!`);
       return;
     }

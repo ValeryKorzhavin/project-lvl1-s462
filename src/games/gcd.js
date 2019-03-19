@@ -1,11 +1,14 @@
 import runGame from '..';
+import generateNum from '../utils';
+
+const gameDescription = 'Find the greatest common divisor of given numbers.';
+const maxRandomNumber = 100;
 
 const getGcd = (a, b) => (a % b === 0 ? b : getGcd(b, a % b));
 
 const generateGameData = () => {
-  const maxRandomNumber = 100;
-  const firstNumber = Math.floor(Math.random() * maxRandomNumber);
-  const secondNumber = Math.floor(Math.random() * maxRandomNumber);
+  const firstNumber = generateNum(maxRandomNumber);
+  const secondNumber = generateNum(maxRandomNumber);
   const gcd = getGcd(firstNumber, secondNumber);
   const question = `${firstNumber} ${secondNumber}`;
   const rightAnswer = String(gcd);
@@ -13,9 +16,6 @@ const generateGameData = () => {
   return { question, rightAnswer };
 };
 
-const runGcdGame = () => {
-  const gameDescription = 'Find the greatest common divisor of given numbers.';
-  runGame(gameDescription, generateGameData);
-};
+const runGcdGame = () => runGame(gameDescription, generateGameData);
 
 export default runGcdGame;

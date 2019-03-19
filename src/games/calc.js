@@ -1,6 +1,9 @@
 import runGame from '..';
+import generateNum from '../utils';
 
-const operationsCount = 3;
+const gameDescription = 'What is the result of the expression?';
+const maxRandomNumber = 100;
+
 const operations = [
   { sign: '+', evaluate: (a, b) => a + b },
   { sign: '-', evaluate: (a, b) => a - b },
@@ -8,10 +11,9 @@ const operations = [
 ];
 
 const generateGameData = () => {
-  const maxRandomNumber = 100;
-  const firstOperand = Math.floor(Math.random() * maxRandomNumber);
-  const secondOperand = Math.floor(Math.random() * maxRandomNumber);
-  const operationNumber = Math.floor(Math.random() * operationsCount);
+  const firstOperand = generateNum(maxRandomNumber);
+  const secondOperand = generateNum(maxRandomNumber);
+  const operationNumber = generateNum(operations.length);
   const operation = operations[operationNumber];
   const rightAnswer = String(operation.evaluate(firstOperand, secondOperand));
   const question = `${firstOperand} ${operation.sign} ${secondOperand}`;
@@ -19,9 +21,6 @@ const generateGameData = () => {
   return { question, rightAnswer };
 };
 
-const runCalcGame = () => {
-  const gameDescription = 'What is the result of the expression?';
-  runGame(gameDescription, generateGameData);
-};
+const runCalcGame = () => runGame(gameDescription, generateGameData);
 
 export default runCalcGame;
