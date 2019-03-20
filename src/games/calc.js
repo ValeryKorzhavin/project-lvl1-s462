@@ -11,9 +11,9 @@ const operations = [
 ];
 
 const generateGameData = () => {
-  const firstOperand = generateNum(maxRandomNumber);
-  const secondOperand = generateNum(maxRandomNumber);
-  const operationNumber = generateNum(operations.length);
+  const firstOperand = generateNum(0, maxRandomNumber);
+  const secondOperand = generateNum(0, maxRandomNumber);
+  const operationNumber = generateNum(0, operations.length - 1);
   const operation = operations[operationNumber];
   const rightAnswer = String(operation.evaluate(firstOperand, secondOperand));
   const question = `${firstOperand} ${operation.sign} ${secondOperand}`;
