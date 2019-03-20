@@ -16,6 +16,4 @@ const generateGameData = () => {
   return { question, rightAnswer };
 };
 
-const runGcdGame = () => runGame(gameDescription, generateGameData);
-
-export default runGcdGame;
+export default () => runGame(gameDescription, generateGameData);

@@ -9,13 +9,11 @@ const generateGameData = () => {
   const firstElement = generateNum(maxRandomNumber);
   const progressionStep = generateNum(maxRandomNumber);
   const progression = range(firstElement, progressionLength, progressionStep);
-  const hiddenElementPosition = generateNum(maxRandomNumber);
+  const hiddenElementPosition = generateNum(progressionLength);
   const rightAnswer = String(progression.splice(hiddenElementPosition, 1, '..'));
   const question = progression.join(' ');
 
   return { question, rightAnswer };
 };
 
-const runProgressionGame = () => runGame(gameDescription, generateGameData);
-
-export default runProgressionGame;
+export default () => runGame(gameDescription, generateGameData);

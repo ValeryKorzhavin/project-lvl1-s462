@@ -23,6 +23,4 @@ const generateGameData = () => {
   return { question, rightAnswer };
 };
 
-const runPrimeGame = () => runGame(gameDescription, generateGameData);
-
-export default runPrimeGame;
+export default () => runGame(gameDescription, generateGameData);
