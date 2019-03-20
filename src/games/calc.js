@@ -14,9 +14,9 @@ const generateGameData = () => {
   const firstOperand = generateNum(0, maxRandomNumber);
   const secondOperand = generateNum(0, maxRandomNumber);
   const operationNumber = generateNum(0, operations.length - 1);
-  const operation = operations[operationNumber];
-  const rightAnswer = String(operation.evaluate(firstOperand, secondOperand));
-  const question = `${firstOperand} ${operation.sign} ${secondOperand}`;
+  const { sign, evaluate } = operations[operationNumber];
+  const rightAnswer = String(evaluate(firstOperand, secondOperand));
+  const question = `${firstOperand} ${sign} ${secondOperand}`;
 
   return { question, rightAnswer };
 };
